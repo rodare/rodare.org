@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google" content="notranslate" />
+<title>Rodare</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+
+
+  <!-- custom css file -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-60445910-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-60445910-1');
+</script>
+<body>
+
+<header>
+    <a href="index.html" class="logo">Rodare</a>
+
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar">Menu</label>
+
+    <img class="img-banner" src="images/banner2b.jpg" alt="libros">
+    <img class="img-banner2" src="images/banner4.jpg" alt="libros2">
+
+    <div class="translate">
+                  <!-- GTranslate: https://gtranslate.io/ -->        
+<div class="gtranslate_wrapper"></div>
+        <script>window.gtranslateSettings = {"default_language":"en","languages":["en","ja","pl","es"],"wrapper_selector":".gtranslate_wrapper","flag_size":16,"flag_style":"3d"}</script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>
+      </div>
+<!-- end of GTranslate-->
+
+    <nav class="dropdown">
+                    <ul>
+                      <li><a href="index.html">home</a></li>
+                      <li><a href="blog.html">blog</a></li>
+                      <li><a href="#">courses +</a>
+                        <ul>
+                          <li><a href="#">spanish +</a>
+                            <ul>
+                              <li><a href="spanish-a1.html">A1</a></li>
+                              <li><a href="spanish-a2.html">A2</a></li>
+                              <li><a href="spanish-b1.html">B1</a></li>
+                              <li><a href="spanish-b2.html">B2</a></li>
+                              <li><a href="spanish-c1.html">C1</a></li>
+                              <li><a href="spanish-c2.html">C2</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">japanese +</a>
+                            <ul>
+                              <li><a href="japanese-a1.html">A1</a></li>
+                              <li><a href="japanese-a2.html">A2</a></li>
+                              <li><a href="japanese-b1.html">B1</a></li>
+                              <li><a href="japanese-b2.html">B2</a></li>
+                              <li><a href="japanese-c1.html">C1</a></li>
+                              <li><a href="japanese-c2.html">C2</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">english +</a>
+                            <ul>
+                              <li><a href="english-a1.html">A1</a></li>
+                              <li><a href="english-a2.html">A2</a></li>
+                              <li><a href="english-b1.html">B1</a></li>
+                              <li><a href="english-b2.html">B2</a></li>
+                              <li><a href="english-c1.html">C1</a></li>
+                              <li><a href="english-c2.html">C2</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">piano +</a>
+                            <ul>
+                              <li><a href="pianoBeg.html">beginner</a></li>
+                              <li><a href="pianoBas.html">basic</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="calendar.html">calendar</a></li>
+                      <li><a href="signup.html">sign-up</a></li>
+                    </ul>
+
+                  </nav>
+  
+       <div class="search-container">         <input type="text" id="searchBox" placeholder="Type to search...">
+
+      </div>
+</header>
+
+<main class="wrapper">
+  <article class="img-info">
+<div id="results"></div>
+            <p><h1>Sign-up for a course</h1></p>
+            <div class="course-selection" style="display: inline;">
+            <select id="input" onchange="courseLevel()">
+                      <option>Spanish</option>
+                      <option>Japanese</option>
+                      <option>English</option>
+                      <option>Piano</option>
+                      <option>select course</option>
+                    </select>
+            		   <select id="output" onchange="levelModality()">
+                     <option>C1(avanzado)</option>
+                     <option>C2(muy avanzado)</option>
+                     <option>A1(iniciación)</option>
+                     <option>A2(básico)</option>
+                     <option>B1(intermedio)</option>
+                     <option>B2(intermedio alto)</option>
+                     <option>select level</option>
+            		</select>
+            			<select id="output2" onchange="courseRedirect()">
+                    <option>Stationary</option>
+                    <option>Online</option>
+                    <option>select modality</option>
+                </select>
+                  </div>
+              <p><h2>Spanish C1(avanzado) Stationary</h2></p>
+              <p>Learning a C1 level is about reaching the highest level a non-native speaker can achieve. You can understand a wide range of demanding, longer clauses, and recognize implicit meaning; express ideas fluently and spontaneously without much obvious searching for expressions; use language flexibly and effectively for social, academic and professional purposes. You can also produce clear, well-structured, detailed text on complex subjects, showing controlled use of organizational patterns, connectors and cohesive devices.
+                <button onclick="toggleContent78()" style="background-color:blue;color:white;">Read More</button>
+                <div id="content78" style="display:none;font-family: Arial, sans-serif; font-size: 16px; line-height: 18px;">
+
+                  <p>
+                  The methodology of the course is based on fun activities carefully chosen by the teacher around the class topic covering all the areas of the language acquisition, namely: listening, speaking, reading and writing. Every class starts with a short conversation, a quick check of the previous homework, and a short presentation of the class topic/unit through an explanation by me complemented by drawings using a tablet, and sometimes audiovisual examples too. Soon after, the students are assigned group or individual activities to perform during class. Then we briefly check the results and clarify student’s questions, and repeat the activity-check methodology till the end of the class, when homework is assigned. The homework consists of 2 components: a quizlet vocabulary that is check by riddles in the following class and an open homework that could be either exercises from the book or a composition following a reading or an audiovisual material.
+                  <p>
+                  Apart from the class textbook -which will be sent to the student some days before the class-, we use Google Classroom, Google Docs, Quizlet and, of course, this website (with exercises and tests) as the main platforms of work, but also other ones such as Flippity and LearningApps. The class is taught via zoom and the recurring link is sent some days before the first lesson.
+                  </p>
+                  Length of the course: 60 academic hrs / 2 times a week / 90 min each time 
+                  <br>
+                  Price: 1450zł (50zł/hr). Class size: 6 people.
+                  <br>Mode: Hybrid (In Starowiślna 17/8, 31-038 Kraków, or Online)
+                   
+                  <ul>
+                    <li>Option 1) Fridays and Sundays 10:00-11:30</li>
+                    <li>Option 2) Saturdays and Sundays 10:00-11:30</li>
+                    <li>Option 3) Mondays and Wednesdays 10:45-12:15</li>
+                    <li>Option 4) Wednesdays 10:45-12:15 and Fridays 10:00-11:30</li>
+                    <li>Option 5) Wednesdays 12:15-13:45 and Fridays 11:30-13:00</li>
+                  </ul>
+                  </p>
+<div class="responsive">
+          <table>
+            <tr>
+              <th>Class days</th>
+              <th>Start and End date</th>
+              <th>Course price</th>
+              <th>Reservation</th>
+            </tr>
+            <tr>
+               
+              <td>Mondays & Wednesdays</td><td>21.04.2025 - 11.06.2025</td>
+               <td><ul id="price"><li>Price: 1600zł (50zł/hr). Class size: 6 people. Individual lessons: 120zł/hr (1:1).</li></ul></td>
+                <td><button id="order" onclick="toggleContent77()">ORDER</button></td>
+            </tr>
+        </table>
+
+<div class="responsive">
+        <div id="form-spaC1s" style="display:none;font-family: Arial, sans-serif; font-size: 16px; line-height: 18px;">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSevBR-3PpYNasM5GZ2I-Ibnzelu23go_Knu03C6grNBDis_Wg/viewform?embedded=true" width="640" height="1034" frameborder="0" marginheight="0" marginwidth="0">Ładuję…</iframe>
+
+        </div>
+        </div>
+</div>
+              </div>
+              </div>
+  </article>
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/highlight-search.js"></script>
+
+          </div>
+
+          </body>
+          </html>

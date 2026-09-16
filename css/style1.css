@@ -1,0 +1,118 @@
+*{
+  margin:0; padding:0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-align: justify;
+}
+
+body {
+  position: relative;
+  margin:0;
+}
+
+li {
+  text-transform: capitalize;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  z-index: 3;
+}
+
+ nav ul{
+  list-style: none;
+}
+nav ul li{
+  position:relative;
+  float:left;
+}
+
+nav ul li a{
+  font-size: 20px;
+  padding: 20px;
+  color:white;
+  display: block;
+}
+
+nav ul li a:hover{
+  background: #FA6114;
+  color: white;
+}
+
+nav ul li ul{
+  position: absolute;
+  left:0;
+  width:144px;
+  background:dimgrey;
+  display: none;
+}
+
+nav ul li ul li{
+  width:100%;
+  border-top: 1px solid dimgrey;
+}
+
+nav ul li ul li ul{
+  left:144px;
+  top: 0px;
+}
+nav ul li:focus-within > ul,
+nav ul li:hover > ul{
+  display:initial;
+}
+
+#menu-bar{
+  display:none;
+}
+
+label{
+  font-size: 20px;
+  color: #FA6114;
+  cursor: pointer;
+  display: none;
+  padding-right: 96px;
+}
+
+
+.wrapper {
+  padding: 16px;
+  height: 1500px; /* Used in this example to enable scrolling */
+  position: relative;
+}
+
+
+.wrap{
+  height: 500px;
+  width: 500px;
+  position: relative;
+  margin: auto;
+  background: blue;
+  z-index: -1;
+}
+
+.box{
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background: red;
+  top:20px;
+  left: 10px;
+  z-index: 0;
+}
+
+

@@ -1,0 +1,397 @@
+*{
+  margin:0; padding:0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-align: justify;
+}
+
+body{
+  min-height: 100vh;
+  /* min-width: 140vh;
+  background: url(../images/fachada.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;*/
+  background-color: rgba(4,20,84,0.1);
+}
+
+li{
+  text-transform: capitalize;
+  list-style: none;
+}
+
+.more{
+   display: none;
+}
+.post{
+   color: #9999a0;
+   font-size: 18px;
+   text-align: justify;
+   line-height: 25px;
+   font-family: 'Work Sans',sans-serif;
+
+}
+.post:not(:last-child){
+   margin-bottom: 30px;
+}
+
+a.gflag {vertical-align:middle;font-size:16px;padding:1px 0;background-repeat:no-repeat;background-image:url(//gtranslate.net/flags/16.png);}
+a.gflag img {border:0;}
+a.gflag:hover {background-image:url(//gtranslate.net/flags/16a.png);}
+#goog-gt-tt {display:none !important;}
+.goog-te-banner-frame {display:none !important;}
+.goog-te-menu-value:hover {text-decoration:none !important;}
+body {top:0 !important;}
+#google_translate_element2 {display:none!important;}
+
+ .img-banner {
+    display: block;
+    width: 100%;
+    height: 200px;
+    position: fixed;
+    top:0px;
+  }
+  .img-banner2 {
+      display: none;
+    }
+
+  .wrapper {
+      width: 92%;
+      margin: 276px auto;
+    }
+
+header{
+  position:fixed;
+  top:201px; left:0;right:0;
+  background: #4a5b76;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  padding: 0px 3% 0% 0%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+
+}
+header .logo {
+  font-size: 38px;
+  color: #FFFFD2;
+  text-align: center;
+  animation: glow 2s ease-in-out infinite alternate;
+  position: relative;
+  padding: 0px 0px 0px 4%;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #696969, 0 0 20px #696969, 0 0 30px #696969, 0 0 40px #696969, 0 0 50px #696969;
+  }
+
+  to {
+    text-shadow: 0 0 10px #b84308, 0 0 20px #b84308, 0 0 30px #b84308, 0 0 40px #b84308, 0 0 50px #b84308, 0 0 60px #b84308;
+  }
+}
+/* header .logo{
+  font-weight: bolder;
+  font-size: 38px;
+  font-weight: normal;
+  text-shadow: -1px 1px 0px rgba(0,0,0,0.5);
+  color: #FA6114 !important;
+  white-space: nowrap;
+  padding: 0px 0px 0px 60px;
+} */
+
+
+header nav ul{
+  list-style: none;
+}
+
+header nav ul li{
+  position:relative;
+  float:left;
+}
+
+header nav ul li a{
+  font-size: 20px;
+  padding: 20px;
+  color:white;
+  display: block;
+}
+
+header nav ul li a:hover{
+  background: #FA6114;
+  color: white;
+}
+
+header nav ul li ul{
+  position: absolute;
+  left:0;
+  width:144px;
+  background:dimgrey;
+  display: none;
+}
+
+header nav ul li ul li{
+  width:100%;
+  border-top: 1px solid dimgrey;
+}
+
+header nav ul li ul li ul{
+  left:144px;
+  top: 0px;
+}
+
+header nav ul li:focus-within > ul,
+header nav ul li:hover > ul{
+  display:initial;
+}
+
+#menu-bar{
+  display:none;
+}
+
+header label{
+  font-size: 20px;
+  color: #FA6114;
+  cursor: pointer;
+  display: none;
+  padding-right: 96px;
+}
+
+.translate{
+  text-align:right;
+  position:fixed;
+  top:226px;
+  right:615px;
+}
+.img-info p {
+  padding: 4px 0px;
+  font-family: arial;
+  font-size: 18px;
+  color: #333131;
+  line-height: 24px;
+}
+
+.img-info h2 {
+  padding: 16px 0px 16px;
+  font-family: arial;
+  font-size: 20px;
+  color: #111;
+}
+
+.responsive{
+    width: 100%;
+    /* height: 0; */
+    padding-bottom: 56.26%;
+    position: relative;
+    overflow-x:auto;
+}
+
+.responsive iframe{
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    top:0;
+    padding-top: 0;
+    box-sizing:border-box;
+}
+
+.responsive2{
+    width: 100%;
+    /* height: 0; */
+    padding-bottom: 100.26%;
+    position: relative;
+    overflow-x:auto;
+}
+
+.responsive2 iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    padding-top: 0;
+    box-sizing:border-box;
+}
+
+
+select{
+  width:190px;
+  height: 30px;
+  font-size: 15px;
+  text-align-last: center;
+}
+
+.course-selection{
+  text-align: center;
+}
+
+#order{
+  background-color:red;
+  color:white;
+  position:relative;
+  margin:-16px -2px;
+  padding:7px 2px;
+  text-align: left;
+
+}
+
+table{
+  width:100% !important;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 2px;
+  font-size: 13px;
+}
+
+tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+.teQAzf {
+    margin: auto;
+    max-width: 90vw;
+    width: 100% !important;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#more {display: none;}
+
+@media(max-width:991px){
+  header{
+    padding:0px;
+    top:43px;
+  }
+
+  header .logo{
+    padding: 0px 0px 0px 4%;
+    position: relative;
+    left: 0px;
+  }
+  header label{
+    display: initial;
+  }
+
+  header nav{
+    position: absolute;
+    top:100%; left:0; right:0;
+    background: dimgrey;
+    border-top: 1px solid rgba(0,0,0,.1);
+    display: none;
+  }
+
+  header nav ul li{
+    width: 100%;
+
+  }
+  header nav ul li ul{
+    position: relative;
+    width: 100%;
+
+  }
+  header nav ul li ul li{
+    background: rgba(0,0,0,.2);
+  }
+
+  header nav ul li ul li ul{
+    width: 100%;
+    left: 0;
+  }
+
+  header nav ul li:focus-within > ul,
+  header nav ul li:hover > ul{
+    display:initial;
+  }
+
+  #menu-bar:checked ~ nav{
+    display: initial;
+  }
+  header label{
+    padding-right: 20px;
+  }
+
+  .img-info h2 {
+    padding: 16px 0px 16px;
+    font-family: arial;
+    font-size: 18px;
+    color: #111;
+    text-align: left;
+  }
+
+  .img-banner {
+    display: none;
+    }
+  .img-banner2 {
+      display: block;
+      width: 100%;
+      padding-bottom: 8px;
+      height: 50px;
+      position: fixed;
+      top:0px;
+    }
+    .wrapper {
+      width: 92%;
+      padding: 0 0px;
+      margin: 90px auto;
+      }
+
+    .translate{
+      text-align:right;
+      position:fixed;
+      top:57px;
+      right:90px;
+    }
+    .responsive{
+        width: 100%;
+        /* height: 0; */
+        padding-bottom: 335.26%;
+        position: relative;
+        overflow-x:auto;
+    }
+
+      select{
+        display:list-item;
+      }
+
+      .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+      }
+
+
+
+}

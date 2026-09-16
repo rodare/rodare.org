@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google" content="notranslate" />
+<title>Rodare</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+
+
+  <!-- custom css file -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-60445910-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-60445910-1');
+</script>
+<body>
+
+<header>
+    <a href="index.html" class="logo">Rodare</a>
+
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar">Menu</label>
+
+    <img class="img-banner" src="images/banner2b.jpg" alt="libros">
+    <img class="img-banner2" src="images/banner4.jpg" alt="libros2">
+
+    <div class="translate">
+                    <!-- GTranslate: https://gtranslate.io/ -->        
+<div class="gtranslate_wrapper"></div>
+        <script>window.gtranslateSettings = {"default_language":"en","languages":["en","ja","pl","es"],"wrapper_selector":".gtranslate_wrapper","flag_size":16,"flag_style":"3d"}</script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>
+      </div>
+<!-- end of GTranslate-->
+
+    <nav class="dropdown">
+                    <ul>
+                      <li><a href="index.html">home</a></li>
+                      <li><a href="blog.html">blog</a></li>
+                      <li><a href="#">courses +</a>
+                        <ul>
+                          <li><a href="#">spanish +</a>
+                            <ul>
+                              <li><a href="spanish-a1.html">A1</a></li>
+                              <li><a href="spanish-a2.html">A2</a></li>
+                              <li><a href="spanish-b1.html">B1</a></li>
+                              <li><a href="spanish-b2.html">B2</a></li>
+                              <li><a href="spanish-c1.html">C1</a></li>
+                              <li><a href="spanish-c2.html">C2</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">japanese +</a>
+                            <ul>
+                              <li><a href="japanese-a1.html">A1</a></li>
+                              <li><a href="japanese-a2.html">A2</a></li>
+                              <li><a href="japanese-b1.html">B1</a></li>
+                              <li><a href="japanese-b2.html">B2</a></li>
+                              <li><a href="japanese-c1.html">C1</a></li>
+                              <li><a href="japanese-c2.html">C2</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">english +</a>
+                            <ul>
+                              <li><a href="english-a1.html">A1</a></li>
+                              <li><a href="english-a2.html">A2</a></li>
+                              <li><a href="english-b1.html">B1</a></li>
+                              <li><a href="english-b2.html">B2</a></li>
+                              <li><a href="english-c1.html">C1</a></li>
+                              <li><a href="english-c2.html">C2</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">piano +</a>
+                            <ul>
+                              <li><a href="pianoBeg.html">beginner</a></li>
+                              <li><a href="pianoBas.html">basic</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="calendar.html">calendar</a></li>
+                      <li><a href="signup.html">sign-up</a></li>
+                    </ul>
+
+                  </nav>
+  
+       <div class="search-container">         <input type="text" id="searchBox" placeholder="Type to search...">
+
+      </div>
+</header>
+
+<main class="wrapper">
+  <article class="img-info">
+<div id="results"></div>
+
+    <h2>Blog</h2>
+
+  <div class="row">
+    <div class="leftcolumn">
+
+    	                  <div class="card">
+      <div class="post">
+        <h2>La playa</h2>
+        <h5>28.01.2025</h5>
+        <div class="fakeimg" style="height:200px;">
+          <img class="zoomable-img" src="https://images.myguide-cdn.com/chile/companies/totoralillo/large/totoralillo-642169.jpg" style="height:100%;width:100%;padding:0px 30px; object-fit: cover;"></div>
+ 
+          <span class="dots">...</span>
+          <span class="more">
+
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vQ5GSwWwoDL9hgTLDSn5sv16kli0rv9CCvRZRHCEgHqbMv555TiopE-UhK7zseqqf1gfhCyXbQHItmH/pub?embedded=true" style="border:none;" width="100%"; height="500px"></iframe>
+
+
+          </span>
+          <button class="read">read more</button>
+      </div>
+      </div>
+
+<button onclick="readArticle()">🔊 Przeczytaj wpis</button>
+
+<article id="blog-post">
+  <!-- Tutaj jest treść Twojego wpisu na blogu -->
+  <h2>Título de la entrada</h2>
+  <p>Hola amigos, ¿qué tal?</p>
+</article>
+
+<script>
+  function readArticle() {
+    const text = document.getElementById('blog-post').innerText;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'es-SP'; // Ustaw odpowiedni język tekstu
+    window.speechSynthesis.speak(utterance);
+  }
+</script>
+
+                  <div class="card">
+      <div class="post">
+        <h2>Las montañas</h2>
+        <h5>19.02.2025</h5>
+        <div class="fakeimg" style="height:200px;">
+          <img class="zoomable-img" src="https://www.wikiexplora.com/images/a/a8/Vista_desde_la_cumbre_del_Cerro_La_Campana.jpg"  style="height:100%;width:100%;padding:0px 30px; object-fit: cover;">
+        </div>
+ 
+          <span class="dots">...</span>
+          <span class="more">
+
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vTlxG8ih-TNJ48sBiVax_JHlRn5Jf4G9hjWVa02L1IkxnIC390eHCbThU9dIV3WIOSp9rqgLAaAsLXn/pub?embedded=true" style="border:none;" width="100%"; height="500px"></iframe>
+
+
+          </span>
+          <button class="read">read more</button>
+      </div>
+      </div>
+
+
+    </div>
+      <aside class="rightcolumn">
+        <div class="card">
+          <h2>About Me</h2>
+          <!-- Dodana klasa zoomable-img do zdjęcia profilowego -->
+          <img class="zoomable-img" src="https://rodrigoarenascatalan.cf/images/perfil2.png" alt="Rodrigo Arenas" style="width:150px; height:150px; border-radius:50%; object-fit:cover; display:block; margin:0 auto 15px auto; border:3px solid #ccc; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+          <p style="text-align: justify;">
+            I'm Rodrigo Arenas Catalán, Teacher, Artist and the creator of this website. 
+            Feel free to contact me for any questions or suggestions. My email is rodare.cf@gmail.com.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Posts by Year</h3>
+          <a href="blog.html"><div class="fakeimg">2026</div></a><br>
+          <a href="blog2025.html"><div class="fakeimg">2025</div></a><br>
+          <a href="blog2024.html"><div class="fakeimg">2024</div></a><br>
+          <a href="blog2023.html"><div class="fakeimg">2023</div></a><br>
+          <a href="blog2022.html"><div class="fakeimg">2022</div></a><br>
+        </div>
+        <div class="card">
+          <h3>Follow Me</h3>
+          <p>Some text..</p>
+        </div>
+      </aside>
+    </div>
+  </article>
+</main>
+
+<!-- Modal do podglądu zdjęć -->
+<div id="imageModal" class="image-modal">
+  <span class="close-modal">&times;</span>
+  <img id="modalImg" src="" alt="Powiększone zdjęcie">
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/highlight-search.js"></script>
+
+</body>
+</html>

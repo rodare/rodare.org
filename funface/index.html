@@ -1,0 +1,378 @@
+<html> 
+  <head> 
+    
+    <script src="//codef.santo.fr/codef/codef_core.js"></script> 
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/detail.css">
+    
+    <style>
+      table.fixed { table-layout:fixed; }
+      table.fixed td { overflow: hidden; }
+    </style>
+    <script> 
+      var Hairs=new image('images/Hairs.png');
+      var Eyebrows=new image('images/Eyebrows.png');
+      var Eyes=new image('images/Eyes.png');
+      var Ears=new image('images/Ears.png');
+      var Noses=new image('images/Noses.png');
+      var Mouths=new image('images/Mouths.png');
+      var Jaws=new image('images/Jaws.png');
+      var Mustaches=new image('images/Mustaches.png');
+      var Beards=new image('images/Beards.png');
+      var Glasses=new image('images/Glasses.png');
+      
+      var mycanvas;
+      
+      
+      
+      var hash = decodeURI(window.location.hash.substr(1));
+      try{
+        var URLVAR = JSON.parse(window.atob(hash));
+        Hairs.Num=URLVAR.v[0];
+        Hairs.Posx=URLVAR.v[1];
+        Hairs.Posy=URLVAR.v[2];
+        
+        Eyebrows.Num=URLVAR.v[3];
+        Eyebrows.Posx=URLVAR.v[4];
+        Eyebrows.Posy=URLVAR.v[5];
+        
+        Eyes.Num=URLVAR.v[6];
+        Eyes.Posx=URLVAR.v[7];
+        Eyes.Posy=URLVAR.v[8];
+        
+        Ears.Num=URLVAR.v[9];
+        Ears.Posx=URLVAR.v[10];
+        Ears.Posy=URLVAR.v[11];
+        
+        Noses.Num=URLVAR.v[12];
+        Noses.Posx=URLVAR.v[13];
+        Noses.Posy=URLVAR.v[14];
+        
+        Mouths.Num=URLVAR.v[15];
+        Mouths.Posx=URLVAR.v[16];
+        Mouths.Posy=URLVAR.v[17];
+        
+        Jaws.Num=URLVAR.v[18];
+        Jaws.Posx=URLVAR.v[19];
+        Jaws.Posy=URLVAR.v[20];
+        
+        Mustaches.Num=URLVAR.v[21];
+        Mustaches.Posx=URLVAR.v[22];
+        Mustaches.Posy=URLVAR.v[23];
+        
+        Beards.Num=URLVAR.v[24];
+        Beards.Posx=URLVAR.v[25];
+        Beards.Posy=URLVAR.v[26];
+        
+        Glasses.Num=URLVAR.v[27];
+        Glasses.Posx=URLVAR.v[28];
+        Glasses.Posy=URLVAR.v[29];
+      } catch (error) {
+        Hairs.Num=Hairs.Posx=Hairs.Posy=0;
+        Eyebrows.Num=Eyebrows.Posx=Eyebrows.Posy=0;
+        Eyes.Num=Eyes.Posx=Eyes.Posy=0;
+        Ears.Num=Ears.Posx=Ears.Posy=0;
+        Noses.Num=Noses.Posx=Noses.Posy=0;
+        Mouths.Num=Mouths.Posx=Mouths.Posy=0;
+        Jaws.Num=Jaws.Posx=Jaws.Posy=0;
+        Mustaches.Num=Mustaches.Posx=Mustaches.Posy=0;
+        Beards.Num=Beards.Posx=Beards.Posy=0;
+        Glasses.Num=Glasses.Posx=Glasses.Posy=0;
+      }
+      
+      function init(){
+        mycanvas=new canvas(360,168);
+        mymaincanvas=new canvas(720, 672,"main");
+        mymaincanvas.contex.imageSmoothingEnabled = false;
+        mymaincanvas.contex.mozImageSmoothingEnabled = false;
+        mymaincanvas.contex.msImageSmoothingEnabled = false;
+        mymaincanvas.fill('#FFFFFF');
+        Hairs.initTile(360,168);
+        Eyebrows.initTile(360,168);
+        Eyes.initTile(360,168);
+        Ears.initTile(360,168);
+        Noses.initTile(360,168);
+        Mouths.initTile(360,168);
+        Jaws.initTile(360,168);
+        Mustaches.initTile(360,168);
+        Beards.initTile(360,168);
+        Glasses.initTile(360,168);
+        
+        $( "#Hairs_Slider" ).slider({
+          value:Hairs.Num,
+          min: 0,
+          max: 57,
+          step: 1,
+          slide: function( event, ui ) {
+            Hairs.Num = ui.value;
+            go();          }
+        });
+        
+        
+        $( "#Eyebrows_Slider" ).slider({
+          value:Eyebrows.Num,
+          min: 0,
+          max: 35,
+          step: 1,
+          slide: function( event, ui ) {
+            Eyebrows.Num = ui.value;
+            go();          }
+        });
+        
+        $( "#Eyes_Slider" ).slider({
+          value:Eyes.Num,
+          min: 0,
+          max: 45,
+          step: 1,
+          slide: function( event, ui ) {
+            Eyes.Num = ui.value;
+            go();          }
+        });
+        
+        $( "#Ears_Slider" ).slider({
+          value:Ears.Num,
+          min: 0,
+          max: 16,
+          step: 1,
+          slide: function( event, ui ) {
+            Ears.Num = ui.value;
+            go();          }
+        });
+        
+        $( "#Noses_Slider" ).slider({
+          value:Noses.Num,
+          min: 0,
+          max: 51,
+          step: 1,
+          slide: function( event, ui ) {
+            Noses.Num = ui.value;
+            go();          }
+        });
+        
+        $( "#Mouths_Slider" ).slider({
+          value:Mouths.Num,
+          min: 0,
+          max: 48,
+          step: 1,
+          slide: function( event, ui ) {
+            Mouths.Num = ui.value;
+            go();          }
+        });
+        
+        $( "#Jaws_Slider" ).slider({
+          value:Jaws.Num,
+          min: 0,
+          max: 26,
+          step: 1,
+          slide: function( event, ui ) {
+            Jaws.Num = ui.value;
+            go();          }
+        });
+        
+        $( "#Mustaches_Slider" ).slider({
+          value:Mustaches.Num,
+          min: 0,
+          max: 42,
+          step: 1,
+          slide: function( event, ui ) {
+            Mustaches.Num = ui.value;
+            go();          }
+        });
+        
+        $( "#Beards_Slider" ).slider({
+          value:Beards.Num,
+          min: 0,
+          max: 20,
+          step: 1,
+          slide: function( event, ui ) {
+            Beards.Num = ui.value;
+            go();          }
+        });
+        
+        $( "#Glasses_Slider" ).slider({
+          value:Glasses.Num,
+          min: 0,
+          max: 26,
+          step: 1,
+          slide: function( event, ui ) {
+            Glasses.Num = ui.value;
+            go();
+          }
+        });
+        
+        go();
+      }
+      
+      function go(){
+        mycanvas.fill('#FFFFFF');
+        Hairs.drawTile(mycanvas,Hairs.Num-1,Hairs.Posx,Hairs.Posy);
+        Eyebrows.drawTile(mycanvas,Eyebrows.Num-1,Eyebrows.Posx,Eyebrows.Posy);
+        Eyes.drawTile(mycanvas,Eyes.Num-1,Eyes.Posx,Eyes.Posy);
+        Ears.drawTile(mycanvas,Ears.Num-1,Ears.Posx,Ears.Posy);
+        Noses.drawTile(mycanvas,Noses.Num-1,Noses.Posx,Noses.Posy);
+        Mouths.drawTile(mycanvas,Mouths.Num-1,Mouths.Posx,Mouths.Posy);
+        Jaws.drawTile(mycanvas,Jaws.Num-1,Jaws.Posx,Jaws.Posy);
+        Mustaches.drawTile(mycanvas,Mustaches.Num-1,Mustaches.Posx,Mustaches.Posy);
+        Beards.drawTile(mycanvas,Beards.Num-1,Beards.Posx,Beards.Posy);
+        Glasses.drawTile(mycanvas,Glasses.Num-1,Glasses.Posx,Glasses.Posy);
+        mycanvas.draw(mymaincanvas,0,0,1,0,2,4);
+        URL='{"v":[';
+        URL+=Hairs.Num+','+Hairs.Posx+','+Hairs.Posy+',';
+        URL+=Eyebrows.Num+','+Eyebrows.Posx+','+Eyebrows.Posy+',';
+        URL+=Eyes.Num+','+Eyes.Posx+','+Eyes.Posy+',';
+        URL+=Ears.Num+','+Ears.Posx+','+Ears.Posy+',';
+        URL+=Noses.Num+','+Noses.Posx+','+Noses.Posy+',';
+        URL+=Mouths.Num+','+Mouths.Posx+','+Mouths.Posy+',';
+        URL+=Jaws.Num+','+Jaws.Posx+','+Jaws.Posy+',';
+        URL+=Mustaches.Num+','+Mustaches.Posx+','+Mustaches.Posy+',';
+        URL+=Beards.Num+','+Beards.Posx+','+Beards.Posy+',';
+        URL+=Glasses.Num+','+Glasses.Posx+','+Glasses.Posy;
+
+        URL+=']}';
+        
+        history.replaceState('', '', 'index.html#'+window.btoa(URL));
+      }
+      
+    </script> 
+  </head> 
+  <body onLoad="init();" bgcolor="#AAAAAA">
+<details>
+                <summary>Infos</summary>
+                <div>
+                  <p><b>Author</b> : NoNameNo^WAB aka Antoine Santo</p>
+                  <p><b>Twitter</b> : <a href='https://twitter.com/alonetrio'>@alonetrio</a></p>
+                  <p><b>Using</b> : <a href="https://codef.santo.fr">CODEF</a></p>
+                  <p><b>Commands</b> : 
+                              <lu>
+                              <li>too easy to add some documentations ;)</li>
+                              </lu>
+              
+                  </p>
+                  <p><b>GitHub</b> : <a href="https://github.com/N0NameN0/CODEF_Funface">https://github.com/N0NameN0/CODEF_Funface</a></p>
+                </div>
+              </details>
+    <center>
+      <H1>CODEF FUNFACE REMAKE</H1>
+      <table cellpadding="6">
+        <col width="720" />
+        <col width="300" />
+        <col width="300" />
+        <tr>
+          <td>
+            <div id="main"></div>
+          </td>
+          <td with="500">
+            <div>
+              Hairs
+              <div id="Hairs_Slider" style="width:260px; margin:10px;"></div>
+              <center>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Hairs.Posx--;go();"><span class="ui-icon ui-icon-arrowthick-1-w"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Hairs.Posx++;go();"><span class="ui-icon ui-icon-arrowthick-1-E"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Hairs.Posy--;go();"><span class="ui-icon ui-icon-arrowthick-1-N"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Hairs.Posy++;go();"><span class="ui-icon ui-icon-arrowthick-1-S"></span>X</button>
+              </center>
+            </div>
+            <br>
+            
+            
+            <div>
+              Eyebrows
+              <div id="Eyebrows_Slider" style="width:260px; margin:10px;"></div>
+              <center>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Eyebrows.Posx--;go();"><span class="ui-icon ui-icon-arrowthick-1-w"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Eyebrows.Posx++;go();"><span class="ui-icon ui-icon-arrowthick-1-E"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Eyebrows.Posy--;go();"><span class="ui-icon ui-icon-arrowthick-1-N"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Eyebrows.Posy++;go();"><span class="ui-icon ui-icon-arrowthick-1-S"></span>X</button>
+              </center>
+            </div>
+            <br>
+            
+            <div>Eyes
+              <div id="Eyes_Slider" style="width:260px; margin:10px;"></div>
+              <center>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Eyes.Posx--;go();"><span class="ui-icon ui-icon-arrowthick-1-w"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Eyes.Posx++;go();"><span class="ui-icon ui-icon-arrowthick-1-E"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Eyes.Posy--;go();"><span class="ui-icon ui-icon-arrowthick-1-N"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Eyes.Posy++;go();"><span class="ui-icon ui-icon-arrowthick-1-S"></span>X</button>
+              </center>
+            </div>
+            <br>
+            <div>Ears
+              <div id="Ears_Slider" style="width:260px; margin:10px;"></div>
+              <center>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Ears.Posx--;go();"><span class="ui-icon ui-icon-arrowthick-1-w"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Ears.Posx++;go();"><span class="ui-icon ui-icon-arrowthick-1-E"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Ears.Posy--;go();"><span class="ui-icon ui-icon-arrowthick-1-N"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Ears.Posy++;go();"><span class="ui-icon ui-icon-arrowthick-1-S"></span>X</button>
+              </center>
+            </div>
+            <br>
+            <div>Noses
+              <div id="Noses_Slider" style="width:260px; margin:10px;"></div>
+              <center>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Noses.Posx--;go();"><span class="ui-icon ui-icon-arrowthick-1-w"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Noses.Posx++;go();"><span class="ui-icon ui-icon-arrowthick-1-E"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Noses.Posy--;go();"><span class="ui-icon ui-icon-arrowthick-1-N"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Noses.Posy++;go();"><span class="ui-icon ui-icon-arrowthick-1-S"></span>X</button>
+              </center>
+            </div>
+          </td>
+          <td>
+            <div>Mouths
+              <div id="Mouths_Slider" style="width:260px; margin:10px;"></div>
+              <center>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Mouths.Posx--;go();"><span class="ui-icon ui-icon-arrowthick-1-w"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Mouths.Posx++;go();"><span class="ui-icon ui-icon-arrowthick-1-E"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Mouths.Posy--;go();"><span class="ui-icon ui-icon-arrowthick-1-N"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Mouths.Posy++;go();"><span class="ui-icon ui-icon-arrowthick-1-S"></span>X</button>
+              </center>
+            </div>
+            <br>
+            <div>Jaws
+              <div id="Jaws_Slider" style="width:260px; margin:10px;"></div>
+              <center>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Jaws.Posx--;go();"><span class="ui-icon ui-icon-arrowthick-1-w"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Jaws.Posx++;go();"><span class="ui-icon ui-icon-arrowthick-1-E"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Jaws.Posy--;go();"><span class="ui-icon ui-icon-arrowthick-1-N"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Jaws.Posy++;go();"><span class="ui-icon ui-icon-arrowthick-1-S"></span>X</button>
+              </center>
+            </div>
+            <br>
+            <div>Mustaches
+              <div id="Mustaches_Slider" style="width:260px; margin:10px;"></div>
+              <center>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Mustaches.Posx--;go();"><span class="ui-icon ui-icon-arrowthick-1-w"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Mustaches.Posx++;go();"><span class="ui-icon ui-icon-arrowthick-1-E"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Mustaches.Posy--;go();"><span class="ui-icon ui-icon-arrowthick-1-N"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Mustaches.Posy++;go();"><span class="ui-icon ui-icon-arrowthick-1-S"></span>X</button>
+              </center>
+            </div>
+            <br>
+            <div>Beards
+              <div id="Beards_Slider" style="width:260px; margin:10px;"></div>
+              <center>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Beards.Posx--;go();"><span class="ui-icon ui-icon-arrowthick-1-w"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Beards.Posx++;go();"><span class="ui-icon ui-icon-arrowthick-1-E"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Beards.Posy--;go();"><span class="ui-icon ui-icon-arrowthick-1-N"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Beards.Posy++;go();"><span class="ui-icon ui-icon-arrowthick-1-S"></span>X</button>
+              </center>
+            </div>
+            <br>
+            <div>Glasses
+              <div id="Glasses_Slider" style="width:260px; margin:10px;"></div>
+              <center>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Glasses.Posx--;go();"><span class="ui-icon ui-icon-arrowthick-1-w"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Glasses.Posx++;go();"><span class="ui-icon ui-icon-arrowthick-1-E"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Glasses.Posy--;go();"><span class="ui-icon ui-icon-arrowthick-1-N"></span>X</button>
+                <button class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="Glasses.Posy++;go();"><span class="ui-icon ui-icon-arrowthick-1-S"></span>X</button>
+              </center>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body> 
+</html>
